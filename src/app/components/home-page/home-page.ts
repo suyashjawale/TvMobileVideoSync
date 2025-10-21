@@ -14,7 +14,7 @@ export class HomePage {
 	paused = signal<boolean>(true);
 	greenScreen = signal<boolean>(false);
 
-	constructor(private ws: Ws, public stateService : StateService) {
+	constructor(private ws: Ws, public stateService: StateService) {
 		this.ws.connect(window.location.hostname);
 	}
 
@@ -31,8 +31,36 @@ export class HomePage {
 		this.ws.send({ action, data });
 	}
 
-	launchVideo(ind:number) {
+	launchVideo(ind: number) {
 		this.stateService.selected_ind.set(ind);
 		this.ws.send({ action: 'select', data: ind });
 	}
+
+	goFullScreen() {
+		const element: any = document.documentElement;
+
+		if (element.requestFullscreen) {
+			element.requestFullscreen();
+		} else if (element.mozRequestFullScreen) { // Firefox
+			element.mozRequestFullScreen();
+		} else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
+			element.webkitRequestFullscreen();
+		} else if (element.msRequestFullscreen) { // IE/Edge
+			element.msRequestFullscreen();
+		}
+	}
+
+	exitFullScreen() {
+		const element: any = document.documentElement;
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if ((document as any).mozCancelFullScreen) { // Firefox
+			(document as any).mozCancelFullScreen();
+		} else if ((document as any).webkitExitFullscreen) { // Chrome, Safari and Opera
+			(document as any).webkitExitFullscreen();
+		} else if ((document as any).msExitFullscreen) { // IE/Edge
+			(document as any).msExitFullscreen();
+		}
+	}
+
 }
