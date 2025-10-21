@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@use '../node_modules/bootstrap/scss/bootstrap' as *;
+@use '@fontsource-variable/outfit';
+
+body {
+    font-family: 'Outfit Variable', sans-serif !important;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}

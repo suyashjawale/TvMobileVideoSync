@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { VideoComponent } from "./components/video-component/video-component";
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,4 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('VideoSync');
 }
