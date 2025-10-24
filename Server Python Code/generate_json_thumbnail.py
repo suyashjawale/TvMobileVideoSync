@@ -52,7 +52,7 @@ def generate_best_thumbnail(video_path, output_folder):
     return best_frame
 
 movie = []
-def process_folder(folder_path, output_folder="../public/"):
+def process_folder(folder_path, output_folder="./"):
     supported_ext = (".mp4", ".avi", ".mov", ".mkv", ".webm")
     video_files = [f for f in os.listdir(folder_path) if f.lower().endswith(supported_ext)]
 
@@ -86,7 +86,7 @@ def process_folder(folder_path, output_folder="../public/"):
 
 
 if __name__ == "__main__":
-    folder = "../public/"  # 🔧 Change this to your folder name
+    folder = "./"  # 🔧 Change this to your folder name
     process_folder(folder)
-    with open("../src/app/data/movie_data.json","w") as f:
+    with open("movie_data.json","w") as f:
         f.write(json.dumps(movie,indent=4))

@@ -1,6 +1,24 @@
 [
     {
         "title1": "The Great Indian Kapil Show",
+        "title2": "Season 02 - Episode 01",
+        "thumbnail": "the_great_indian_kapil_show_s02_e01.jpg",
+        "filename": "the_great_indian_kapil_show_s02_e01.mkv"
+    },
+    {
+        "title1": "The Great Indian Kapil Show",
+        "title2": "Season 02 - Episode 02",
+        "thumbnail": "the_great_indian_kapil_show_s02_e02.jpg",
+        "filename": "the_great_indian_kapil_show_s02_e02.mkv"
+    },
+    {
+        "title1": "The Great Indian Kapil Show",
+        "title2": "Season 02 - Episode 03",
+        "thumbnail": "the_great_indian_kapil_show_s02_e03.jpg",
+        "filename": "the_great_indian_kapil_show_s02_e03.mkv"
+    },
+    {
+        "title1": "The Great Indian Kapil Show",
         "title2": "Season 01 - Episode 01",
         "thumbnail": "the_great_indian_kapil_show_s01_e01.jpg",
         "filename": "the_great_indian_kapil_show_s01_e01.mkv"

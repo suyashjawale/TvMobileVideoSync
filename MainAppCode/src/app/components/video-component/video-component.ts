@@ -16,6 +16,12 @@ export class VideoComponent {
 	showPlay = signal<boolean>(true);
 	counta= signal<number>(0);
 
+	// ---------------------
+
+	tabInd = signal(0);
+
+	// --------------------
+
 	constructor(private ws: Ws, public stateService: StateService) {
 		this.ws.connect(window.location.hostname);
 		effect(() => {
@@ -26,10 +32,6 @@ export class VideoComponent {
 
 	ngAfterViewInit() {
 		this.video = this.videoRef.nativeElement;
-	}
-
-	updatecountA(){
-		this.counta.update(a=>a+1);
 	}
 
 	handleRemoteCommand(message: string) {

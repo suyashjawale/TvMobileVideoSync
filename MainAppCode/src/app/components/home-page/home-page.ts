@@ -63,4 +63,7 @@ export class HomePage {
 		}
 	}
 
+	scrollToVideo() {
+		this.videoRef.nativeElement.scrollIntoView({ behavior: 'smooth' });
+	}
 }

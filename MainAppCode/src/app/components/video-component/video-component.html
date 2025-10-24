@@ -9,8 +9,9 @@
     </div>
     <div class="position-absolute text-white fw-semibold top-0 start-0 p-5 m-5">
         <div class="display-1">{{stateService.movies_list()[stateService.selected_ind()].title1}}</div>
-        <div class="fs-1">{{stateService.movies_list()[stateService.selected_ind()].title2}}</div>
-    </div>        
+        <div class="fs-1">{{stateService.movies_list()[stateService.selected_ind()].title2.split("-")[0]}} &nbsp;•&nbsp; {{stateService.movies_list()[stateService.selected_ind()].title2.split("-")[1]}}
+        </div>
+    </div>
     <button class="btn position-absolute top-50 start-50 translate-middle">
         <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M21.409 9.353a2.998 2.998 0 0 1 0 5.294L8.597 21.614C6.534 22.737 4 21.277 4 18.968V5.033c0-2.31 2.534-3.769 4.597-2.648z" fill="#fff"/></svg>
     </button>
