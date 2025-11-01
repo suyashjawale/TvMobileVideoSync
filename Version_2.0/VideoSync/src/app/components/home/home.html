@@ -1,0 +1,15 @@
+<div class="container-fluid p-4">
+    <div class="row gx-4">
+        @for (episode of stateService.movies_list(); let i = $index; track i) {
+        <div class="col-4 py-5" #episodeCard>
+            <img [src]="episode.thumbnail" class="img-fluid rounded-4 border border-width"
+                [ngClass]="i==stateService.movies_ind()?'border-white ':'border-custom'" />
+            <div class="ms-1 mt-3 fs-2">
+                <div>{{episode.title1}}</div>
+                <div class="mt-2">{{episode.title2.split("-")[0]}} <span class="fw-normal">&nbsp;•&nbsp;</span>
+                    {{episode.title2.split("-")[1]}}</div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

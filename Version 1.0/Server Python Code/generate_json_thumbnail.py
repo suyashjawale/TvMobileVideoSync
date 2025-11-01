@@ -63,7 +63,7 @@ def process_folder(folder_path, output_folder="./"):
         obj = dict()
         chunks = filename.split(" ")
         obj['title1'] = " ".join(chunks[:5])
-        obj['title2'] = "Season " + "".join(re.findall(r'\d', chunks[5])) + " • " + "Episode " + "".join(re.findall(r'\d', chunks[6]))
+        obj['title2'] = "Season " + "".join(re.findall(r'\d', chunks[5])) + " - " + "Episode " + "".join(re.findall(r'\d', chunks[6]))
         obj['thumbnail'] = "_".join(chunks[:5]).lower()+"_"+ "_".join(chunks[5:7]).lower() + ".jpg"
         obj['filename'] = "_".join(chunks[:5]).lower()+"_"+ "_".join(chunks[5:7]).lower() +ext
 

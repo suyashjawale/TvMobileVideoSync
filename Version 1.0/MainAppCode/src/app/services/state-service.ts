@@ -13,6 +13,5 @@ export class StateService {
         this.http.get<CardList[]>('/movie_data.json').subscribe(data => {
             return this.movies_list.set(data);
         });
-
     }
 }
