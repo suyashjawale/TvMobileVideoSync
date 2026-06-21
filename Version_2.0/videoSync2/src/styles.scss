@@ -1,0 +1,35 @@
+@use '../node_modules/bootstrap/scss/bootstrap' as *;
+@use '@fontsource-variable/outfit';
+
+body {
+    font-family: 'Outfit Variable', sans-serif !important;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    background-color: #15202b !important;
+    color: rgb(255, 255, 255);
+}
+
+.border-custom {
+    border-color: #15202b !important;
+}
+
+.border-width {
+    border-width: 8px !important;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+router-outlet+* {
+    display: block;
+    animation: fade 0.5s;
+}

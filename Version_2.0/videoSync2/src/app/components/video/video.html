@@ -1,0 +1,30 @@
+<div class="d-flex vh-100 align-items-center bg-black justify-content-center">
+    <video #videoClient width="100%" [src]="stateService.movies_list()[stateService.movies_ind()].filename"
+        [poster]="stateService.movies_list()[stateService.movies_ind()].thumbnail" class="position-relative"
+        (pause)="showPlay.set(true)" (playing)="showPlay.set(false)" (waiting)="showPlay.set(true)"
+        (stalled)="showPlay.set(true)" (loadstart)="showPlay.set(true)"></video>
+    @if(showPlay()){
+    <div class="position-absolute top-0 start-0 h-100 w-100 bg-black opacity-75">
+
+    </div>
+    <div class="position-absolute top-0 start-0 h-100 w-100 d-flex flex-column justify-content-between p-5">
+        <div>
+            <div class="display-1">{{stateService.movies_list()[stateService.movies_ind()].title1}}</div>
+            <div class="fs-1 pt-3">{{stateService.movies_list()[stateService.movies_ind()].title2.split("-")[0]}}
+                &nbsp;•&nbsp;
+                {{stateService.movies_list()[stateService.movies_ind()].title2.split("-")[1]}}
+            </div>
+        </div>
+        <div class="text-center">
+            <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M21.409 9.353a2.998 2.998 0 0 1 0 5.294L8.597 21.614C6.534 22.737 4 21.277 4 18.968V5.033c0-2.31 2.534-3.769 4.597-2.648z" fill="#fff"/></svg>
+        </div>
+        <div>
+            <input #progressBar class="pt-5 pb-4" type="range" min="0" step="0.001" [max]="videoClient!=undefined?videoClient?.duration || 0: 0" [value]="videoClient!=undefined?videoClient?.currentTime || 0: 0"/>
+            <div class="d-flex justify-content-between fs-2 px-1">
+                <div>{{formatTime(videoClient!=undefined?videoClient?.currentTime || 0: 0)}}</div>
+                <div>{{formatTime(videoClient!=undefined?videoClient?.duration || 0: 0)}}</div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
